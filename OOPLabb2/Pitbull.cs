@@ -2,13 +2,14 @@
 {
     public class Pitbull : Dog
     {
-        public bool Scary { get; set; } = true; // egenskap för pitbull
+        public bool Scary { get; set; } // egenskap för pitbull
 
-        public Pitbull()
+        // Default värden för Pitbull
+        public Pitbull(string name = "Cupcake", string species = "Pitbull", int age = 6, int weight = 60, bool furry = true
+            , bool friendly = false, bool scary = true)
+            :base(name, species, age, weight, furry, friendly)
         {
-            Name = "Cupcake";
-            Age = 6;
-            Weight = 60;
+            Scary = scary;
         }
 
         public void Attack() // egen metod för pitbull
@@ -18,7 +19,7 @@
 
         public override void makeSound()
         {
-            Console.WriteLine($"{Name} is barking!");
+            Console.WriteLine($"{Name} the {Species} is barking!");
         }
     }
 }

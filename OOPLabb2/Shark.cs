@@ -2,15 +2,14 @@
 {
     public class Shark : Animal
     {
-        public bool SharpTeeth { get; set; } = true; // egenskap för shark
+        public bool SharpTeeth { get; set; } // egenskap för shark
 
-        public Shark()
+        // Default värden för Shark
+        public Shark(string name = "SilverTooth", string species = "Shark", int age = 21, int weight = 900, bool furry = false
+            , bool sharpTeeth = true)
+            :base(name, species, age, weight, furry)
         {
-            Name = "SilverTooth";
-            Species = "Shark";
-            Age = 21;
-            Weight = 900;
-            Furry = false;
+            SharpTeeth = sharpTeeth;
         }
 
         public void Swim() // Metod för shark-klassen
@@ -19,7 +18,7 @@
         }
         public override void makeSound()
         {
-            Console.WriteLine($"{Name} is making biting and splashing noises!");
+            Console.WriteLine($"{Name} the {Species} is making biting and splashing noises!");
         }
     }
 }

@@ -2,15 +2,15 @@
 {
     public class Dog : Animal
     {
-        public bool Friendly { get; set; } = true; // egenskap för Dog
+        public bool Friendly { get; set; } // egenskap för Dog
 
-        public Dog()
+
+        // Default värden för Dog
+        public Dog(string name = "Blixten", string species = "Dog", int age = 3, int weight = 50, bool furry = true,
+            bool friendly = true)
+            :base(name, species, age, weight, furry)
         {
-            Name = "Blixten";
-            Species = "Dog";
-            Age = 3;
-            Weight = 50;
-            Furry = true;
+            Friendly = friendly;
         }
         public void Bark() // egen metod för 'Dog'
         {
@@ -18,7 +18,7 @@
         }
         public override void makeSound()
         {
-            Console.WriteLine($"{Name} is barking!");
+            Console.WriteLine($"{Name} the {Species} is barking!");
         }
     }
 }

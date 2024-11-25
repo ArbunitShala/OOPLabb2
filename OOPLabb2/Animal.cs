@@ -2,12 +2,23 @@
 {
     public class Animal
     {
-        // Egenskaper för alla djur med default värden
-        public string Name { get; set; } = "Okänt namn";
-        public string Species { get; set; } = "Okänd art";
-        public int Age { get; set; } = 0;
-        public int Weight { get; set; } = 0;
-        public bool Furry { get; set; } = false;
+        // Egenskaper för alla djur
+        public string Name { get; set; }
+        public string Species { get; set; }
+        public int Age { get; set; } 
+        public int Weight { get; set; }
+        public bool Furry { get; set; }
+
+        // Default värden för animal nedanför
+        // Constructor för att skapa nya djur
+        public Animal(string name = "Okänt namn",string species = "Okänd art",int age = 0,int weight = 0,bool furry = false)
+        {
+            Name = name;
+            Species = species;
+            Age = age;
+            Weight = weight;
+            Furry = furry;
+        }
 
         //Metoder som dom delar
         public virtual void makeSound()
@@ -20,8 +31,7 @@
         }
         public void Eat()
         {
-            Console.WriteLine($"{Name} is eating hamburgers and pizzas!");
+           Console.WriteLine($"{Name} is eating hamburgers and pizzas!");
         }
-
     }
 }

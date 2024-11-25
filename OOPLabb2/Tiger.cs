@@ -2,15 +2,14 @@
 {
     public class Tiger : Animal
     {
-        public bool CamoflageStripes { get; set; } = true; // egenskap för tiger
-        public Tiger()
-        {
-            Name = "GoldTooth";
-            Species = "Tiger";
-            Age = 10;
-            Weight = 200;
-            Furry = true;
+        public bool CamoflageStripes { get; set; } // egenskap för tiger
 
+        // Default värden för Tiger
+        public Tiger(string name = "GoldTooth", string species = "Tiger", int age = 10, int weight = 200, bool furry = true
+            ,bool camoflageStripes = true)
+            :base(name, species, age, weight, furry)
+        {
+            CamoflageStripes = camoflageStripes;
         }
         //Metod för tiger-klassen
         public void Roar()
@@ -19,7 +18,7 @@
         }
         public override void makeSound()
         {
-            Console.WriteLine($"{Name} is roaring!");
+            Console.WriteLine($"{Name} the {Species} is roaring!");
         }
     }
 }

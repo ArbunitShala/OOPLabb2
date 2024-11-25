@@ -2,13 +2,14 @@
 {
     public class Chihuahua : Dog
     {
-        public bool BarkAtPostman { get; set; } = true; // ny egenskap för chihuahua
+        public bool BarkAtPostman { get; set; } // ny egenskap för chihuahua
 
-        public Chihuahua()
+        // Default värden för Chihuahua
+        public Chihuahua(string name = "Bob", string species = "Chihuahua", int age = 1, int weight = 6, bool furry = true, 
+            bool friendly = true, bool barkAtPostman = true)
+            :base(name, species, age, weight, furry, friendly)
         {
-            Name = "Bob";
-            Age = 1;
-            Weight = 6;
+            BarkAtPostman = barkAtPostman;
         }
 
         public void Pose() // egen metod för chihuahua
@@ -17,7 +18,7 @@
         }
         public override void makeSound()
         {
-            Console.WriteLine($"{Name} is barking!");
+            Console.WriteLine($"{Name} the {Species} is barking!");
         }
     }
 }
